@@ -1,11 +1,12 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'; // React Router hook
+import { NavLink } from 'react-router-dom'; 
 
 export default function Navbar() {
+  const username = sessionStorage.getItem('username');
   return (
     <>
         <nav>
-            
+            Welcome {username}
             <NavLink to="/home"> News feed </NavLink>
             <NavLink to="/openNewPost"> New post </NavLink>
             <NavLink to="/openProfile"> My profile </NavLink>
@@ -16,3 +17,4 @@ export default function Navbar() {
     </>
   )
 }
+ 

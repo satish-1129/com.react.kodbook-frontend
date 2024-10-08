@@ -12,6 +12,7 @@ export default function Index() {
       e.preventDefault();
       const resp = await axios.post('http://localhost:8080/login', {username, password});
       if(resp.data === "valid") {
+        sessionStorage.setItem('username',username);
         navigate('/home');
         alert("login successfull");
       }
